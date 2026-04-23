@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScamGuard Privacy Policy</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: #f8f9fa;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1a1a2e;
+            font-size: 32px;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #2196F3;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-top: 20px;
+        }
+        h3 {
+            color: #555;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 12px;
+        }
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 12px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .updated {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+            padding: 12px;
+            background: #f0f4f8;
+            border-left: 4px solid #2196F3;
+        }
+        .highlight-box {
+            background: #e3f2fd;
+            border-left: 4px solid #1976d2;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #f57c00;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th {
+            background: #eceff1;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #bbb;
+        }
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .contact-section {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            text-align: center;
+            color: #666;
+            font-size: 13px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+        }
+        a {
+            color: #1976d2;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ScamGuard Privacy Policy</h1>
+        
+        <div class="updated">
+            <strong>Last Updated:</strong> April 23, 2026<br>
+            <strong>Effective Date:</strong> April 23, 2026
+        </div>
+
+        <h2>1. Overview</h2>
+        <p>ScamGuard ("we," "our," "us," or the "Extension") is a Chrome browser extension designed to help senior citizens identify potentially fraudulent or scam emails in Gmail. This Privacy Policy explains what data we collect, how we use it, how we protect it, and your rights regarding that data.</p>
+        <p><strong>Core Principle:</strong> ScamGuard is designed with privacy as a foundational principle. We do not store, save, or retain your email content. We do not sell your data. We do not use your emails for any purpose other than providing the scam detection analysis you requested in that moment.</p>
+
+        <h2>2. Data We Collect</h2>
+        
+        <h3>2.1 Email Content (Temporary, For Analysis Only)</h3>
+        <p>When you open an email in Gmail, ScamGuard automatically extracts and analyzes the following information from that email:</p>
+        <ul>
+            <li><strong>Sender Display Name:</strong> The name of the person or organization that sent the email</li>
+            <li><strong>Sender Email Address:</strong> The email address of the sender</li>
+            <li><strong>Subject Line:</strong> The email subject</li>
+            <li><strong>Email Body Text:</strong> The plain text content of the email (HTML formatting is stripped)</li>
+        </ul>
+        <p><strong>What happens to this data:</strong></p>
+        <ul>
+            <li>The data is sent via HTTPS (encrypted) to a secure Cloudflare Worker proxy</li>
+            <li>The proxy forwards the data to Meta's Llama 3.1 8b AI for analysis</li>
+            <li>Llama 3.1 8b analyzes the email for scam patterns and returns a safety grade (A through F)</li>
+            <li>The analysis result is displayed in your browser as a colored badge next to the email in Gmail</li>
+            <li><strong>The email data is NOT stored by ScamGuard or Cloudflare for any period beyond the immediate analysis</strong></li>
+            <li>The result (grade only) is cached temporarily in your browser's session memory to avoid re-analyzing the same email multiple times</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>Important:</strong> We never store your actual email content. The email text is processed in real-time and discarded immediately after analysis. Only the scam detection result (grade and explanation) is briefly kept in your browser's session memory while you have Gmail open.
+        </div>
+
+        <h3>2.2 Extension Usage Data</h3>
+        <p>ScamGuard may collect the following usage information <strong>locally on your device only</strong>:</p>
+        <ul>
+            <li><strong>Consent status:</strong> Whether you accepted the onboarding consent (stored in chrome.storage.local)</li>
+            <li><strong>Session cache:</strong> A temporary in-memory list of email thread IDs you've analyzed (cleared when your browser closes or you leave Gmail)</li>
+            <li><strong>No analytics or tracking:</strong> We do not use Google Analytics, Mixpanel, Segment, or any third-party analytics service</li>
+        </ul>
+        <p>This usage data is <strong>stored exclusively on your device and never transmitted to any server</strong>.</p>
+
+        <h3>2.3 Cloudflare Worker Logs (Standard Network Logging)</h3>
+        <p>When you use ScamGuard, your request passes through Cloudflare's network. Cloudflare may log standard information that occurs during normal web requests:</p>
+        <ul>
+            <li>Your approximate geographic location (based on IP address)</li>
+            <li>Request timestamp</li>
+            <li>Response status codes</li>
+            <li>Page request timing information</li>
+        </ul>
+        <p><strong>This is standard network infrastructure logging and is not specific to ScamGuard. Cloudflare's data retention and usage policies apply and are publicly available at cloudflare.com/privacypolicy.</strong></p>
+
+        <h2>3. How We Use Your Data</h2>
+        <table>
+            <tr>
+                <th>Data Type</th>
+                <th>How It's Used</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>Email content (sender, subject, body)</td>
+                <td>Sent to Llama 3.1 8b AI to analyze for scam patterns and return a safety grade</td>
+                <td>Analyzed and discarded in real-time (not stored)</td>
+            </tr>
+            <tr>
+                <td>Safety grade result</td>
+                <td>Displayed in Gmail as a colored badge; cached locally to avoid re-scanning</td>
+                <td>Session memory only (cleared when you close your browser or leave Gmail)</td>
+            </tr>
+            <tr>
+                <td>Consent status</td>
+                <td>Tracks whether you have accepted the extension's data usage terms</td>
+                <td>Persists until you uninstall the extension or manually clear your browser data</td>
+            </tr>
+            <tr>
+                <td>Standard network logs (Cloudflare)</td>
+                <td>Infrastructure logging for network reliability and performance monitoring</td>
+                <td>Per Cloudflare's standard retention policy (typically 24-48 hours)</td>
+            </tr>
+        </table>
+
+        <h3>3.1 We Do NOT Use Your Data For</h3>
+        <ul>
+            <li>Selling or trading your email content or any derivative data</li>
+            <li>Marketing or advertising purposes</li>
+            <li>Training machine learning models</li>
+            <li>Building user profiles or tracking your email habits</li>
+            <li>Sharing with third parties (except Llama AI for immediate analysis)</li>
+            <li>Any purpose beyond providing the scam detection feature</li>
+        </ul>
+
+        <h2>4. Third-Party Services</h2>
+
+        <h3>4.1 Llama 3.1 8b AI</h3>
+        <p>ScamGuard uses Meta's Llama 3.1 8b AI model to analyze emails for scam patterns. When you use ScamGuard:</p>
+        <ul>
+            <li>Your email data (sender, subject, body text) is sent to Llama 3.1 8b for analysis</li>
+            <li>The AI analyzes the email and returns a scam detection result</li>
+            <li>Llama does not store your email content for training or secondary purposes</li>
+            <li>Your email is analyzed once and the data is discarded</li>
+        </ul>
+
+        <h3>4.2 Cloudflare Workers</h3>
+        <p>ScamGuard uses a Cloudflare Worker as a proxy between your browser and Llama's API. The Worker:</p>
+        <ul>
+            <li>Securely holds your Llama API key (so it's never exposed in the extension code)</li>
+            <li>Forwards your email data to Llama's API</li>
+            <li>Returns the analysis result to your browser</li>
+            <li>Does not store any email content</li>
+        </ul>
+        <p>Cloudflare's privacy policy applies: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">https://www.cloudflare.com/privacypolicy/</a></p>
+
+        <h3>4.3 Gmail (Google)</h3>
+        <p>ScamGuard runs as a Chrome extension within Gmail. Gmail's privacy policy applies to your Gmail account and data storage: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
+        <p>ScamGuard does not access your Gmail password, account credentials, or anything beyond the email currently displayed in your browser.</p>
+
+        <h2>5. Data Retention</h2>
+        <table>
+            <tr>
+                <th>Data Type</th>
+                <th>Retention Period</th>
+                <th>Location</th>
+            </tr>
+            <tr>
+                <td>Email content (during analysis)</td>
+                <td>Seconds (real-time processing only)</td>
+                <td>Transmitted via HTTPS, not stored</td>
+            </tr>
+            <tr>
+                <td>Safety grade result</td>
+                <td>Session memory (until you close Gmail or your browser)</td>
+                <td>Your browser only</td>
+            </tr>
+            <tr>
+                <td>Consent status</td>
+                <td>Until you uninstall the extension or clear browser data</td>
+                <td>chrome.storage.local on your device</td>
+            </tr>
+            <tr>
+                <td>Cloudflare network logs</td>
+                <td>Per Cloudflare's retention policy (typically 24-48 hours)</td>
+                <td>Cloudflare's servers</td>
+            </tr>
+        </table>
+
+        <h2>6. Data Security</h2>
+
+        <h3>6.1 In Transit</h3>
+        <ul>
+            <li><strong>HTTPS encryption:</strong> All data transmitted between your browser and Cloudflare is encrypted using HTTPS/TLS 1.2 or higher</li>
+            <li><strong>Llama API:</strong> All data transmitted between Cloudflare and Llama is encrypted using HTTPS/TLS 1.2 or higher</li>
+            <li><strong>No plaintext transmission:</strong> Email data is never sent over unencrypted connections</li>
+        </ul>
+
+        <h3>6.2 At Rest</h3>
+        <ul>
+            <li><strong>No storage:</strong> ScamGuard does not store email data persistently. Email content is processed and discarded in real-time.</li>
+            <li><strong>Local cache only:</strong> The only data cached locally is your consent status and session-memory analysis results (the grades, not the email content)</li>
+            <li><strong>Your device:</strong> This local cache is stored exclusively on your device via chrome.storage.local and never transmitted to any server</li>
+        </ul>
+
+        <h3>6.3 API Key Security</h3>
+        <ul>
+            <li>The Llama API key is stored as a Cloudflare environment secret and is never exposed in extension code</li>
+            <li>All network connections are authenticated and encrypted</li>
+            <li>Cloudflare applies enterprise-grade DDoS protection and access controls</li>
+        </ul>
+
+        <div class="warning-box">
+            <strong>Disclaimer:</strong> While we implement industry-standard security measures, no system is 100% secure. If you are concerned about data transmitted through the internet, you may choose not to use this extension. For questions about our security practices, please contact us at the address below.
+        </div>
+
+        <h2>7. GDPR Rights (EU and UK Residents)</h2>
+        <p>If you are a resident of the European Union, European Economic Area, United Kingdom, or Switzerland, the General Data Protection Regulation (GDPR) grants you the following rights:</p>
+
+        <h3>7.1 Your Rights</h3>
+        <ul>
+            <li><strong>Right to Access:</strong> Request a copy of the personal data we hold about you</li>
+            <li><strong>Right to Rectification:</strong> Request that we correct any inaccurate data about you</li>
+            <li><strong>Right to Erasure:</strong> Request deletion of your data by uninstalling the extension or clearing your browser data</li>
+            <li><strong>Right to Restrict Processing:</strong> Limit how we process your data by uninstalling the extension</li>
+            <li><strong>Right to Data Portability:</strong> Receive your data in a portable, machine-readable format</li>
+            <li><strong>Right to Object:</strong> Object to our processing of your data by uninstalling the extension</li>
+        </ul>
+
+        <h3>7.2 Lawful Basis for Processing</h3>
+        <p>ScamGuard's processing of your email data is based on your <strong>explicit consent</strong>. This consent is obtained through the onboarding screen that appears when you first install the extension. You must click "I understand" to enable email scanning. You can withdraw consent at any time by uninstalling the extension.</p>
+
+        <h3>7.3 Contact & Dispute Resolution</h3>
+        <p>If you believe we are processing your data in violation of GDPR, you have the right to lodge a complaint with your national data protection authority. You can also contact us directly at the address provided in Section 8 (Contact Us).</p>
+
+        <h2>8. CCPA Rights (California Residents)</h2>
+        <p>If you are a California resident, the California Consumer Privacy Act (CCPA) grants you the following rights:</p>
+
+        <h3>8.1 Right to Know</h3>
+        <p>You have the right to request what categories and specific pieces of personal data we collect about you. ScamGuard collects:</p>
+        <ul>
+            <li>Email content (sender, subject, body) — processed in real-time and not stored</li>
+            <li>Consent status — stored locally on your device</li>
+        </ul>
+
+        <h3>8.2 Right to Delete</h3>
+        <p>You have the right to request deletion of personal data we have collected. You can delete all ScamGuard data by uninstalling the extension, clearing your browser cache and cookies, or resetting your chrome.storage.local data.</p>
+
+        <h3>8.3 Right to Opt-Out of Sale</h3>
+        <p><strong>ScamGuard does not sell, trade, or share your personal data with any third party for their commercial benefit. This right is not applicable to ScamGuard.</strong></p>
+
+        <h3>8.4 Right to Non-Discrimination</h3>
+        <p>We do not discriminate against users who exercise their CCPA rights. Using or not using ScamGuard, and exercising your privacy rights, will not affect your access to Gmail or any other service.</p>
+
+        <h2>9. Your Rights & Choices</h2>
+
+        <h3>9.1 Control Over Email Scanning</h3>
+        <ul>
+            <li><strong>Disable the extension:</strong> You can turn off ScamGuard at any time via Chrome's extension settings</li>
+            <li><strong>Uninstall:</strong> You can uninstall ScamGuard completely, which will remove all local data and stop all email analysis</li>
+        </ul>
+
+        <h3>9.2 Data Deletion</h3>
+        <ul>
+            <li>Clear local storage through Chrome Settings → Privacy and Security → Delete Browsing Data</li>
+            <li>Clear extension storage via chrome://extensions → ScamGuard → Details → Storage → Clear Data</li>
+            <li>Uninstall the extension: Right-click the ScamGuard icon → Remove from Chrome</li>
+        </ul>
+
+        <h3>9.3 Consent Withdrawal</h3>
+        <p>You can withdraw your consent to data processing at any time by uninstalling the extension or disabling it in your Chrome settings. This will immediately stop ScamGuard from analyzing any further emails.</p>
+
+        <h2>10. Children's Privacy</h2>
+        <p>ScamGuard is designed for senior citizens and is not intended for use by children under 13 years old. We do not knowingly collect data from children. If we become aware that a child has provided us with personal data, we will delete that data immediately.</p>
+        <p>For users between 13 and 18, parental consent may be required under COPPA and other laws. If you are in this age group, please speak with a parent or guardian before using this extension.</p>
+
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. When we make material changes, we will update the "Last Updated" date at the top of this policy and post the updated policy on this page.</p>
+        <p>Your continued use of ScamGuard after changes become effective constitutes your acceptance of the revised Privacy Policy.</p>
+
+        <h2>12. Chrome Web Store Compliance</h2>
+        <p><strong>Limited Use Declaration:</strong> ScamGuard accesses and processes email content from Gmail exclusively to provide the scam detection feature as described in the extension's store listing. Email data is not used for any other purpose, including machine learning training, profiling, or any secondary use. Email content is processed in real-time and not retained. The data handling complies with Google's Chrome Web Store User Data Policy and the Limited Use Requirements.</p>
+        <p>This extension does not:</p>
+        <ul>
+            <li>Sell or share personal data with third parties for their commercial benefit</li>
+            <li>Use data for advertising or personalized advertising</li>
+            <li>Use data for training AI models (beyond the immediate scam detection analysis)</li>
+            <li>Profile users based on email content</li>
+            <li>Track users' email habits or patterns over time</li>
+        </ul>
+
+        <h2>13. Contact Us</h2>
+        <div class="contact-section">
+            <p>If you have questions about this Privacy Policy, concerns about our data practices, or wish to exercise any of your privacy rights, please contact us:</p>
+            <p>
+                <strong>Email:</strong> Yash.parikh.009@gmail.com<br><br>
+                <strong>Response Time:</strong> We will respond to your inquiry within 30 days. For GDPR/CCPA requests, we aim to respond within the legally required timeframe (typically 30-45 days).
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>
+                © 2026 ScamGuard. All rights reserved. This Privacy Policy is binding and enforceable.<br><br>
+                <strong>Disclaimer:</strong> This Privacy Policy is for informational purposes. If you have legal questions about how ScamGuard complies with privacy laws, please consult with a qualified attorney in your jurisdiction.
+            </p>
+            <p>Last Updated: April 23, 2026</p>
+        </div>
+
+    </div>
+</body>
+</html>
